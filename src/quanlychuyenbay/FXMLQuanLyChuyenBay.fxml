@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
@@ -8,11 +9,29 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="quanlychuyenbay.FXMLQuanLyChuyenBayController">
-    <stylesheets>
-        <URL value="@fxmlquanlychuyenbay.css" />
-    </stylesheets>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="972.0" stylesheets="@fxmlquanlychuyenbay.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text layoutY="-13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QuanLyChuyenBay" wrappingWidth="99.13671875" />
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="108.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/air_phane.jpg" />
+               </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Title" text="Quản Lý Chuyến Bay" />
+         </children>
+      </HBox>
+      <TableView prefHeight="450.0" prefWidth="200.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="ButtonGroup">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="142.0" text="Cập nhật" />
+            <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="140.0" text="Thoát" />
+         </children>
+      </HBox>
    </children>
-</AnchorPane>
+</VBox>
