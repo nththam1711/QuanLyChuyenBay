@@ -1,0 +1,39 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 09-Dec-2019, 11:52:18
+    Author     : thamt
+*/
+
+VBox {
+    -fx-padding: 20;
+    -fx-spacing: 20;
+    -fx-alignment: CENTER;
+    -fx-font: 'Roboto';
+    -fx-font-size: 18;
+}
+HBox {
+    -fx-padding: 0;
+    -fx-spacing: 20;
+    -fx-alignment: CENTER;
+    
+}
+
+Button {
+    -fx-padding: 10;
+    -fx-spacing: 10;
+}
+Text {
+    -fx-font-weight: bold;
+}
+Text.ProjectName {
+    -fx-font-size: 34;
+    -fx-fill: gold;
+   
+}
+Text.CreateStudent {
+    -fx-spacing: 50;
+}

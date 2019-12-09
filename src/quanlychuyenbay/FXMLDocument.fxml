@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="972.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quanlychuyenbay.FXMLDocumentController">
+    <children>
+        <HBox prefHeight="206.0" prefWidth="871.0">
+            <children>
+                <ImageView fitHeight="134.0" fitWidth="258.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/air_phane.jpg" />
+                    </image>
+                </ImageView>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="ProjectName" text="PHẦN MỀM QUẢN LÝ CHUYẾN BAY" wrappingWidth="584.427734375">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Text>
+            </children>
+        </HBox>
+      <Button fx:id="btnQuanLyChuyenBay" mnemonicParsing="false" onAction="#handleButtonQuanLyChuyenBay" prefHeight="47.0" prefWidth="500.0" text="Quản Lý Chuyến Bay" />
+        <Button fx:id="btnNhanLichChuyenBay" mnemonicParsing="false" prefHeight="47.0" prefWidth="500.0" text="Nhận Lịch Chuyến Bay">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnBanVe" mnemonicParsing="false" prefHeight="47.0" prefWidth="500.0" text="Bán Vé">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnGhiNhanDatVe" mnemonicParsing="false" prefHeight="37.0" prefWidth="500.0" text="Ghi Nhận Đặt Vé">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnTraCuuChuyenBay" mnemonicParsing="false" prefHeight="37.0" prefWidth="500.0" text="Tra Cứu Chuyến Bay">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="CreateStudent" text="Sinh viên thực hiện" wrappingWidth="162.4130859375" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="StudentName" text="Phạm Hải Châu - Nguyễn Thị Hồng Thắm" />
+    </children>
+</VBox>
