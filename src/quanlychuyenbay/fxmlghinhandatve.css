@@ -2,20 +2,24 @@
  * Empty Stylesheet file.
  */
 
+.mainFxmlClass {
+
+}
 VBox {
     -fx-font-size: 18;
     -fx-spacing: 30;
     -fx-padding: 20;
-}
-HBox {
-    -fx-spacing: 20;
-    /*-fx-alignment: CENTER;*/
 }
 
 Text.Title {
     -fx-font-size: 36;
     -fx-font-weight: bold;
     -fx-alignment-adjust: CENTER;
+}
+
+GridPane {
+    -fx-alignment: CENTER;
+
 }
 
 HBox.ButtonGroup {

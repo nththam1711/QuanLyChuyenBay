@@ -5,27 +5,18 @@
 .mainFxmlClass {
 
 }
-
 VBox {
     -fx-padding: 20;
     -fx-spacing: 30;
     -fx-font-size: 18;
-
+    
 }
-HBox {
-    -fx-spacing: 20;
-}
-GridPane {
-    -fx-font-size: 16;
-    -fx-alignment: CENTER 
-}
-
 Text.Title {
     -fx-font-size: 36;
     -fx-font-weight: bold;
-    -fx-alignment-adjust: CENTER 
 }
-HBox.ButtonGroup {
+
+GridPane {
     -fx-alignment: CENTER;
-    -fx-spacing: 50;
+  
 }

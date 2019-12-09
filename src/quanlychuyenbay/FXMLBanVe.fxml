@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="972.0" stylesheets="@fxmlbanve.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/air_phane.jpg" />
+               </image>
+            </ImageView>
+            <Pane prefHeight="131.0" prefWidth="795.0">
+               <children>
+                  <Text layoutX="240.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Title" text="Vé Chuyến Bay" />
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+      <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mã Chuyến Bay" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sân Bay Đi" GridPane.rowIndex="1" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày Giờ" GridPane.rowIndex="2" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mã Hành Khách" GridPane.rowIndex="3" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hành Khách" GridPane.rowIndex="4" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hạng Vé" GridPane.rowIndex="5" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Giá Tiền" GridPane.rowIndex="6" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sân Bay Đến" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tình Trạng Vé" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CMND" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Số Điện Thoại" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <TextField disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField disable="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField disable="true" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField disable="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField disable="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField disable="true" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <TextField disable="true" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <TextField disable="true" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <ComboBox prefHeight="39.0" prefWidth="265.0" GridPane.columnIndex="1" />
+            <ComboBox prefHeight="39.0" prefWidth="303.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="ButtonGroup">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="107.0" text="Lưu" />
+            <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="106.0" text="Tạo Mới" />
+            <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="110.0" text="Thoát" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

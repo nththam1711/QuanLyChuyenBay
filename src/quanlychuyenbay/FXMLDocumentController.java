@@ -44,7 +44,7 @@ public class FXMLDocumentController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLNhanLichChuyenBay.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
-            stage.setTitle("Quản Lý Chuyến Bay");
+            stage.setTitle("Nhận Lịch Chuyến Bay");
             stage.setScene(new Scene(root));
             stage.show();
         } catch (Exception e) {
@@ -53,36 +53,36 @@ public class FXMLDocumentController implements Initializable {
     }
     @FXML private void handleButtonBanVe (ActionEvent event) {
         try {
-//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLQuanLyChuyenBay.fxml"));
-//            Parent root = fxmlLoader.load();
-//            Stage stage = new Stage();
-//            stage.setTitle("Quản Lý Chuyến Bay");
-//            stage.setScene(new Scene(root));
-//            stage.show();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLBanVe.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Vé Chuyến Bay");
+            stage.setScene(new Scene(root));
+            stage.show();
         } catch (Exception e) {
             System.out.println("Can't load new windown");
         }
     }
     @FXML private void handleButtonGhiNhanDatVe (ActionEvent event) {
         try {
-//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLQuanLyChuyenBay.fxml"));
-//            Parent root = fxmlLoader.load();
-//            Stage stage = new Stage();
-//            stage.setTitle("Quản Lý Chuyến Bay");
-//            stage.setScene(new Scene(root));
-//            stage.show();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLGhiNhanDatVe.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Ghi Nhận Đặt Vé");
+            stage.setScene(new Scene(root));
+            stage.show();
         } catch (Exception e) {
             System.out.println("Can't load new windown");
         }
     }
     @FXML private void handleButtonTraCuuChuyenBay (ActionEvent event) {
         try {
-//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLQuanLyChuyenBay.fxml"));
-//            Parent root = fxmlLoader.load();
-//            Stage stage = new Stage();
-//            stage.setTitle("Quản Lý Chuyến Bay");
-//            stage.setScene(new Scene(root));
-//            stage.show();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLTraCuuChuyenBay.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Tra Cứu Chuyến Bay");
+            stage.setScene(new Scene(root));
+            stage.show();
         } catch (Exception e) {
             System.out.println("Can't load new windown");
         }

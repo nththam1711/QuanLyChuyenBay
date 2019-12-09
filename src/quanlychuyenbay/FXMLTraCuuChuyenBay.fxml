@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="972.0" stylesheets="@fxmltracuuchuyenbay.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quanlychuyenbay.FXMLTraCuuChuyenBayController">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/air_phane.jpg" />
+               </image></ImageView>
+            <Pane prefHeight="131.0" prefWidth="712.0">
+               <children>
+                  <Text layoutX="185.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Title" text="Tra Cứu Chuyến Bay" />
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+      <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sân Bay Đi" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sân Bay Đến" GridPane.rowIndex="1" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Khởi Hành Từ" GridPane.rowIndex="2" />
+            <ComboBox prefHeight="39.0" prefWidth="230.0" GridPane.columnIndex="1" />
+            <ComboBox prefHeight="30.0" prefWidth="230.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <DatePicker prefHeight="39.0" prefWidth="231.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <DatePicker prefHeight="39.0" prefWidth="230.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Đến" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Tìm" />
+      <TableView prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Thoát" />
+   </children>
+</VBox>

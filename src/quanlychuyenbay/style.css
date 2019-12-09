@@ -12,7 +12,6 @@ VBox {
     -fx-padding: 20;
     -fx-spacing: 20;
     -fx-alignment: CENTER;
-    -fx-font: 'Roboto';
     -fx-font-size: 18;
 }
 HBox {

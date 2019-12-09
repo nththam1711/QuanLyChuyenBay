@@ -10,6 +10,16 @@
 
 <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="972.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quanlychuyenbay.FXMLDocumentController">
     <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Quản Lý">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Quản Lý Chuyến Bay" />
+                  <MenuItem mnemonicParsing="false" text="Quản Lý Tuyến Bay" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
         <HBox prefHeight="206.0" prefWidth="871.0">
             <children>
                 <ImageView fitHeight="134.0" fitWidth="258.0" pickOnBounds="true" preserveRatio="true">
@@ -25,22 +35,22 @@
             </children>
         </HBox>
       <Button fx:id="btnQuanLyChuyenBay" mnemonicParsing="false" onAction="#handleButtonQuanLyChuyenBay" prefHeight="47.0" prefWidth="500.0" text="Quản Lý Chuyến Bay" />
-        <Button fx:id="btnNhanLichChuyenBay" mnemonicParsing="false" prefHeight="47.0" prefWidth="500.0" text="Nhận Lịch Chuyến Bay">
+        <Button fx:id="btnNhanLichChuyenBay" mnemonicParsing="false" onAction="#handleButtonNhanLichChuyenBay" prefHeight="47.0" prefWidth="500.0" text="Nhận Lịch Chuyến Bay">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-        <Button fx:id="btnBanVe" mnemonicParsing="false" prefHeight="47.0" prefWidth="500.0" text="Bán Vé">
+        <Button fx:id="btnBanVe" mnemonicParsing="false" onAction="#handleButtonBanVe" prefHeight="47.0" prefWidth="500.0" text="Bán Vé">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-        <Button fx:id="btnGhiNhanDatVe" mnemonicParsing="false" prefHeight="37.0" prefWidth="500.0" text="Ghi Nhận Đặt Vé">
+        <Button fx:id="btnGhiNhanDatVe" mnemonicParsing="false" onAction="#handleButtonGhiNhanDatVe" prefHeight="37.0" prefWidth="500.0" text="Ghi Nhận Đặt Vé">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-        <Button fx:id="btnTraCuuChuyenBay" mnemonicParsing="false" prefHeight="37.0" prefWidth="500.0" text="Tra Cứu Chuyến Bay">
+        <Button fx:id="btnTraCuuChuyenBay" mnemonicParsing="false" onAction="#handleButtonTraCuuChuyenBay" prefHeight="37.0" prefWidth="500.0" text="Tra Cứu Chuyến Bay">
             <font>
                 <Font size="18.0" />
             </font>
