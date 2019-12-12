@@ -10,35 +10,35 @@
 <?import javafx.scene.layout.*?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="972.0" stylesheets="@fxmlquanlychuyenbay.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quanlychuyenbay.FXMLQuanLyChuyenBayController">
-   <children>
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <ImageView fitHeight="108.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/air_phane.jpg" />
-               </image>
-            </ImageView>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Title" text="Quản Lý Chuyến Bay" />
-         </children>
-      </HBox>
-      <TableView fx:id="tbvChuyenBay" prefHeight="450.0" prefWidth="200.0">
-        <columns>
-          <TableColumn fx:id="colMaChuyen" prefWidth="110.0" text="Mã Chuyến" />
-          <TableColumn fx:id="colMaMB" prefWidth="119.0" text="Mã Máy Bay" />
-            <TableColumn fx:id="colSanBayDi" prefWidth="114.0" text="Sân Bay Đi" />
-            <TableColumn fx:id="colSanBayDen" minWidth="8.0" prefWidth="119.0" text="Sân Bay Đến" />
-            <TableColumn fx:id="colKhoiHanh" minWidth="0.0" prefWidth="130.0" text="Khởi Hành" />
-            <TableColumn fx:id="colThoiGianDuKien" prefWidth="113.0" text="Dự Kiến" />
-            <TableColumn fx:id="colSoGheBanDau" minWidth="0.0" prefWidth="104.0" text="Số Ghế BĐ" />
-            <TableColumn fx:id="colSoGheTrong" minWidth="1.0" prefWidth="122.0" text="Số Ghế Trống" />
-        </columns>
-      </TableView>
-      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="ButtonGroup">
-         <children>
-            <Button mnemonicParsing="false" onAction="#handleThemButton" prefHeight="39.0" prefWidth="127.0" text="Thêm" />
-            <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="142.0" text="Cập nhật" />
-            <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="140.0" text="Thoát" />
-         </children>
-      </HBox>
-   </children>
+    <children>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <ImageView fitHeight="108.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/air_phane.jpg" />
+                    </image>
+                </ImageView>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Title" text="Quản Lý Chuyến Bay" />
+            </children>
+        </HBox>
+        <TableView fx:id="tbvChuyenBay" prefHeight="450.0" prefWidth="200.0">
+            <columns>
+                <TableColumn fx:id="colMaChuyen" prefWidth="110.0" text="Mã Chuyến" />
+                <TableColumn fx:id="colMaMB" prefWidth="119.0" text="Mã Máy Bay" />
+                <TableColumn fx:id="colSanBayDi" prefWidth="114.0" text="Sân Bay Đi" />
+                <TableColumn fx:id="colSanBayDen" minWidth="8.0" prefWidth="119.0" text="Sân Bay Đến" />
+                <TableColumn fx:id="colKhoiHanh" minWidth="0.0" prefWidth="130.0" text="Khởi Hành" />
+                <TableColumn fx:id="colThoiGianDuKien" prefWidth="113.0" text="Dự Kiến" />
+                <TableColumn fx:id="colSoGheBanDau" minWidth="0.0" prefWidth="104.0" text="Số Ghế BĐ" />
+                <TableColumn fx:id="colSoGheTrong" minWidth="1.0" prefWidth="122.0" text="Số Ghế Trống" />
+            </columns>
+        </TableView>
+        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="ButtonGroup">
+            <children>
+                <Button mnemonicParsing="false" onAction="#handleThemButton" prefHeight="39.0" prefWidth="127.0" text="Thêm" />
+                <Button mnemonicParsing="false" onAction="#handelCapNhatButton" prefHeight="39.0" prefWidth="142.0" text="Cập nhật" />
+                <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="140.0" text="Thoát" />
+            </children>
+        </HBox>
+    </children>
 </VBox>

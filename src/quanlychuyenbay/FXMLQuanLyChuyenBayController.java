@@ -60,7 +60,7 @@ public class FXMLQuanLyChuyenBayController implements Initializable {
         // TODO
 
         this.colMaChuyen.setCellValueFactory(new PropertyValueFactory("maChuyen"));
-        this.colMaMB.setCellValueFactory(new PropertyValueFactory("maMB"));
+        this.colMaMB.setCellValueFactory(new PropertyValueFactory("mayBay"));
         this.colSanBayDi.setCellValueFactory(new PropertyValueFactory("sanBayDi"));
         this.colSanBayDen.setCellValueFactory(new PropertyValueFactory("sanBayDen"));
         this.colKhoiHanh.setCellValueFactory(new PropertyValueFactory("khoiHanh"));
@@ -84,6 +84,10 @@ public class FXMLQuanLyChuyenBayController implements Initializable {
             System.out.println("Can't load new windown");
         }
     }
+    
+    @FXML private void handelCapNhatButton() {
+        this.reloadTbvChuyenBay();
+    }
 
     private ObservableList<ChuyenBay> getChuyenBay() {
 
@@ -102,6 +106,11 @@ public class FXMLQuanLyChuyenBayController implements Initializable {
         }
         return null;
 
+    }
+
+    public void reloadTbvChuyenBay() {
+        this.tbvChuyenBay.getItems().clear();
+        this.tbvChuyenBay.setItems(this.getChuyenBay());
     }
 
 }

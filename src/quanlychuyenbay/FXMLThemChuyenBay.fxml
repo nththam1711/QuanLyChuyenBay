@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" stylesheets="@fxmlthemchuyenbay.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" stylesheets="@fxmlthemchuyenbay.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quanlychuyenbay.FXMLThemChuyenBayController">
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Title" text="Thêm Tuyến Bay" />
       <GridPane>
@@ -23,8 +23,6 @@
           <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mã Chuyến Bay" />
@@ -35,16 +33,16 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dự Kiến" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Số Ghế Ban Đầu" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Số Ghế Trống" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <DatePicker GridPane.columnIndex="3" />
-            <DatePicker GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <TextField fx:id="txtMaChuyenBay" GridPane.columnIndex="1" />
+            <TextField fx:id="txtSanBayDi" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtSanBayDen" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <DatePicker fx:id="dtpKhoiHanh" GridPane.columnIndex="3" />
+            <TextField fx:id="txtSoGheBanDau" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField fx:id="txtSoGheTrong" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cbxMaMB" prefHeight="39.0" prefWidth="201.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtDuKien" GridPane.columnIndex="3" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="156.0" text="Xác Nhận" />
+      <Button mnemonicParsing="false" onAction="#handleAcceptButton" prefHeight="25.0" prefWidth="156.0" text="Xác Nhận" />
    </children>
 </VBox>

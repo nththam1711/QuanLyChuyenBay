@@ -22,10 +22,10 @@ public class MayBay {
     private String TenMB;
     
     @Column(name = "NamSX")
-    private int NamSX;
+    private Integer NamSX;
     
     @Column(name = "SoGhe")
-    private int SoGhe;
+    private Integer SoGhe;
 
     /**
      * @return the MaMB
@@ -42,14 +42,14 @@ public class MayBay {
     }
 
     /**
-     * @return the tenMB
+     * @return the TenMB
      */
     public String getTenMB() {
         return TenMB;
     }
 
     /**
-     * @param tenMB the tenMB to set
+     * @param TenMB the TenMB to set
      */
     public void setTenMB(String TenMB) {
         this.TenMB = TenMB;
@@ -58,28 +58,35 @@ public class MayBay {
     /**
      * @return the NamSX
      */
-    public int getNamSX() {
+    public Integer getNamSX() {
         return NamSX;
     }
 
     /**
      * @param NamSX the NamSX to set
      */
-    public void setNamSX(int NamSX) {
+    public void setNamSX(Integer NamSX) {
         this.NamSX = NamSX;
     }
 
     /**
      * @return the SoGhe
      */
-    public int getSoGhe() {
+    public Integer getSoGhe() {
         return SoGhe;
     }
 
     /**
      * @param SoGhe the SoGhe to set
      */
-    public void setSoGhe(int SoGhe) {
+    public void setSoGhe(Integer SoGhe) {
         this.SoGhe = SoGhe;
     }
+    
+    @Override
+    public String toString() {
+        return this.MaMB;
+    }
+
+    
 }

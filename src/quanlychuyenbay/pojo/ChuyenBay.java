@@ -19,9 +19,6 @@ public class ChuyenBay implements Serializable {
     @Id
     private String maChuyen;
     
-    @Column(name = "MaMB", length = 5, nullable = false, insertable = false, updatable = false)
-    private String maMB;
-    
     @Column(name = "SanBayDi")
     private String sanBayDi;
     
@@ -49,11 +46,11 @@ public class ChuyenBay implements Serializable {
     
     }
     
-    public ChuyenBay (String maChuyen, String maMB, String sanBayDi, String sanBayDen, String khoiHanh,
+    public ChuyenBay (String maChuyen, MayBay maMB, String sanBayDi, String sanBayDen, String khoiHanh,
             String thoiGianDuKien, Integer soGheBanDau, Integer soGheTrong) {
         
         this.maChuyen = maChuyen;
-        this.maMB = maMB;
+        this.mayBay = maMB;
         this.sanBayDi = sanBayDi;
         this.sanBayDen = sanBayDen;
         this.khoiHanh = khoiHanh;
@@ -74,20 +71,6 @@ public class ChuyenBay implements Serializable {
      */
     public void setMaChuyen(String maChuyen) {
         this.maChuyen = maChuyen;
-    }
-
-    /**
-     * @return the maMB
-     */
-    public String getMaMB() {
-        return maMB;
-    }
-
-    /**
-     * @param maMB the maMB to set
-     */
-    public void setMaMB(String maMB) {
-        this.maMB = maMB;
     }
 
     /**
@@ -188,6 +171,7 @@ public class ChuyenBay implements Serializable {
         this.mayBay = mayBay;
     }
 
+    
 
     
    
