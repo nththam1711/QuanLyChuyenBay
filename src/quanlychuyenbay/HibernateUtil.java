@@ -8,6 +8,8 @@ package quanlychuyenbay;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import quanlychuyenbay.pojo.ChuyenBay;
+import quanlychuyenbay.pojo.MayBay;
 
 /**
  *
@@ -18,6 +20,8 @@ public class HibernateUtil {
     
     static {
         Configuration configure = new Configuration();
+        configure.addAnnotatedClass(ChuyenBay.class);
+        configure.addAnnotatedClass(MayBay.class);
         configure.configure("hibernate.cfg.xml");
         StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configure.getProperties());
         factory = configure.buildSessionFactory(builder.build());

@@ -5,6 +5,7 @@
  */
 package quanlychuyenbay.pojo;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 /**
@@ -13,140 +14,181 @@ import javax.persistence.*;
  */
 @Entity 
 @Table(name = "chuyenbay")
-public class ChuyenBay {
+public class ChuyenBay implements Serializable {
 
     @Id
-    private String MaChuyen;
-    @Column(name = "MaMB", length = 5, nullable = false)
-    private String MaMB;
+    private String maChuyen;
+    
+    @Column(name = "MaMB", length = 5, nullable = false, insertable = false, updatable = false)
+    private String maMB;
     
     @Column(name = "SanBayDi")
-    private String SanBayDi;
+    private String sanBayDi;
     
     @Column(name = "SanBayDen")
-    private String SanBayDen;
+    private String sanBayDen;
     
     @Column(name = "Khoihanh")
-    private String KhoiHanh;
+    private String khoiHanh;
     
     @Column(name = "ThoiGianDuKien")
-    private String ThoiGianDuKien;
+    private String thoiGianDuKien;
     
     @Column(name = "SoGheBanDau")
-    private int SoGheBanDau;
+    private Integer soGheBanDau;
     
     @Column(name = "SoGheTrong")
-    private int SoGheTrong;
+    private Integer soGheTrong;
+    
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "MaMB")
+    private MayBay mayBay;
+
+    
+    public ChuyenBay() {
+    
+    }
+    
+    public ChuyenBay (String maChuyen, String maMB, String sanBayDi, String sanBayDen, String khoiHanh,
+            String thoiGianDuKien, Integer soGheBanDau, Integer soGheTrong) {
+        
+        this.maChuyen = maChuyen;
+        this.maMB = maMB;
+        this.sanBayDi = sanBayDi;
+        this.sanBayDen = sanBayDen;
+        this.khoiHanh = khoiHanh;
+        this.thoiGianDuKien = thoiGianDuKien;
+        this.soGheBanDau = soGheBanDau;
+        this.soGheTrong = soGheTrong;
+    }
 
     /**
-     * @return the MaChuyen
+     * @return the maChuyen
      */
     public String getMaChuyen() {
-        return MaChuyen;
+        return maChuyen;
     }
 
     /**
-     * @param MaChuyen the MaChuyen to set
+     * @param maChuyen the maChuyen to set
      */
-    public void setMaChuyen(String MaChuyen) {
-        this.MaChuyen = MaChuyen;
+    public void setMaChuyen(String maChuyen) {
+        this.maChuyen = maChuyen;
     }
 
     /**
-     * @return the MaMB
+     * @return the maMB
      */
     public String getMaMB() {
-        return MaMB;
+        return maMB;
     }
 
     /**
-     * @param MaMB the MaMB to set
+     * @param maMB the maMB to set
      */
-    public void setMaMB(String MaMB) {
-        this.MaMB = MaMB;
+    public void setMaMB(String maMB) {
+        this.maMB = maMB;
     }
 
     /**
-     * @return the SanBayDi
+     * @return the sanBayDi
      */
     public String getSanBayDi() {
-        return SanBayDi;
+        return sanBayDi;
     }
 
     /**
-     * @param SanBayDi the SanBayDi to set
+     * @param sanBayDi the sanBayDi to set
      */
-    public void setSanBayDi(String SanBayDi) {
-        this.SanBayDi = SanBayDi;
+    public void setSanBayDi(String sanBayDi) {
+        this.sanBayDi = sanBayDi;
     }
 
     /**
-     * @return the SanBayDen
+     * @return the sanBayDen
      */
     public String getSanBayDen() {
-        return SanBayDen;
+        return sanBayDen;
     }
 
     /**
-     * @param SanBayDen the SanBayDen to set
+     * @param sanBayDen the sanBayDen to set
      */
-    public void setSanBayDen(String SanBayDen) {
-        this.SanBayDen = SanBayDen;
+    public void setSanBayDen(String sanBayDen) {
+        this.sanBayDen = sanBayDen;
     }
 
     /**
-     * @return the KhoiHanh
+     * @return the khoiHanh
      */
     public String getKhoiHanh() {
-        return KhoiHanh;
+        return khoiHanh;
     }
 
     /**
-     * @param KhoiHanh the KhoiHanh to set
+     * @param khoiHanh the khoiHanh to set
      */
-    public void setKhoiHanh(String KhoiHanh) {
-        this.KhoiHanh = KhoiHanh;
+    public void setKhoiHanh(String khoiHanh) {
+        this.khoiHanh = khoiHanh;
     }
 
     /**
-     * @return the ThoiGianDuKien
+     * @return the thoiGianDuKien
      */
     public String getThoiGianDuKien() {
-        return ThoiGianDuKien;
+        return thoiGianDuKien;
     }
 
     /**
-     * @param ThoiGianDuKien the ThoiGianDuKien to set
+     * @param thoiGianDuKien the thoiGianDuKien to set
      */
-    public void setThoiGianDuKien(String ThoiGianDuKien) {
-        this.ThoiGianDuKien = ThoiGianDuKien;
+    public void setThoiGianDuKien(String thoiGianDuKien) {
+        this.thoiGianDuKien = thoiGianDuKien;
     }
 
     /**
-     * @return the SoGheBanDau
+     * @return the soGheBanDau
      */
-    public int getSoGheBanDau() {
-        return SoGheBanDau;
+    public Integer getSoGheBanDau() {
+        return soGheBanDau;
     }
 
     /**
-     * @param SoGheBanDau the SoGheBanDau to set
+     * @param soGheBanDau the soGheBanDau to set
      */
-    public void setSoGheBanDau(int SoGheBanDau) {
-        this.SoGheBanDau = SoGheBanDau;
+    public void setSoGheBanDau(Integer soGheBanDau) {
+        this.soGheBanDau = soGheBanDau;
     }
 
     /**
-     * @return the SoGheTrong
+     * @return the soGheTrong
      */
-    public int getSoGheTrong() {
-        return SoGheTrong;
+    public Integer getSoGheTrong() {
+        return soGheTrong;
     }
 
     /**
-     * @param SoGheTrong the SoGheTrong to set
+     * @param soGheTrong the soGheTrong to set
      */
-    public void setSoGheTrong(int SoGheTrong) {
-        this.SoGheTrong = SoGheTrong;
+    public void setSoGheTrong(Integer soGheTrong) {
+        this.soGheTrong = soGheTrong;
     }
+
+    /**
+     * @return the mayBay
+     */
+    public MayBay getMayBay() {
+        return mayBay;
+    }
+
+    /**
+     * @param mayBay the mayBay to set
+     */
+    public void setMayBay(MayBay mayBay) {
+        this.mayBay = mayBay;
+    }
+
+
+    
+   
 }

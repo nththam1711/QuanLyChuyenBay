@@ -6,8 +6,25 @@
 package quanlychuyenbay;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import quanlychuyenbay.pojo.ChuyenBay;
 
 /**
  * FXML Controller class
@@ -16,12 +33,75 @@ import javafx.fxml.Initializable;
  */
 public class FXMLQuanLyChuyenBayController implements Initializable {
 
+    @FXML
+    private TableView<ChuyenBay> tbvChuyenBay;
+    @FXML
+    private TableColumn colMaChuyen;
+    @FXML
+    private TableColumn colMaMB;
+    @FXML
+    private TableColumn colSanBayDi;
+    @FXML
+    private TableColumn colSanBayDen;
+    @FXML
+    private TableColumn colKhoiHanh;
+    @FXML
+    private TableColumn colThoiGianDuKien;
+    @FXML
+    private TableColumn colSoGheBanDau;
+    @FXML
+    private TableColumn colSoGheTrong;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+
+        this.colMaChuyen.setCellValueFactory(new PropertyValueFactory("maChuyen"));
+        this.colMaMB.setCellValueFactory(new PropertyValueFactory("maMB"));
+        this.colSanBayDi.setCellValueFactory(new PropertyValueFactory("sanBayDi"));
+        this.colSanBayDen.setCellValueFactory(new PropertyValueFactory("sanBayDen"));
+        this.colKhoiHanh.setCellValueFactory(new PropertyValueFactory("khoiHanh"));
+        this.colThoiGianDuKien.setCellValueFactory(new PropertyValueFactory("thoiGianDuKien"));
+        this.colSoGheBanDau.setCellValueFactory(new PropertyValueFactory("soGheBanDau"));
+        this.colSoGheTrong.setCellValueFactory(new PropertyValueFactory("soGheTrong"));
+
+        this.tbvChuyenBay.setItems(this.getChuyenBay());
+    }
+
+    @FXML
+    private void handleThemButton() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLThemChuyenBay.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Thêm Chuyến Bay");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (Exception e) {
+            System.out.println("Can't load new windown");
+        }
+    }
+
+    private ObservableList<ChuyenBay> getChuyenBay() {
+
+        try {
+            Session session = HibernateUtil.getSessionFactory().openSession();
+
+            Criteria cr = session.createCriteria(ChuyenBay.class);
+
+            List<ChuyenBay> chuyenBay = cr.list();
+            session.close();
+            return FXCollections.observableArrayList(chuyenBay);
+
+        } catch (Exception ex) {
+            Logger.getAnonymousLogger().log(Level.SEVERE, "msg", ex);
+
+        }
+        return null;
+
+    }
+
 }

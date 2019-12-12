@@ -6,11 +6,12 @@
 
 }
 VBox {
-    -fx-font-size: 18;
-    -fx-spacing: 30;
     -fx-padding: 20;
-}
+    -fx-spacing: 30;
+    -fx-font-size: 18;
+    -fx-alignment: CENTER;
 
+}
 Text.Title {
     -fx-font-size: 36;
     -fx-font-weight: bold;
@@ -19,9 +20,4 @@ Text.Title {
 GridPane {
     -fx-alignment: CENTER;
 
-}
-
-HBox.ButtonGroup {
-    -fx-alignment: CENTER;
-    -fx-spacing: 50;
 }

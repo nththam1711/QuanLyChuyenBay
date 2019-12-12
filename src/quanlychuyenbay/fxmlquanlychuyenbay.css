@@ -22,3 +22,7 @@ HBox.ButtonGroup {
     -fx-alignment: CENTER;
     -fx-spacing: 50;
 }
+
+TableColumn {
+    -fx-font-size: 14;
+}
