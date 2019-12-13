@@ -21,9 +21,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Order;
 import quanlychuyenbay.pojo.ChuyenBay;
 
 /**
@@ -73,10 +75,16 @@ public class FXMLQuanLyChuyenBayController implements Initializable {
 
     @FXML
     private void handleThemButton() {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLThemChuyenBay.fxml"));
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLThemChuyenBay.fxml"));
             Parent root = fxmlLoader.load();
+
+            FXMLThemChuyenBayController controller = fxmlLoader.getController();
+            controller.setMayBayData(tbvChuyenBay.getItems());
+
             Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
             stage.setTitle("Thêm Chuyến Bay");
             stage.setScene(new Scene(root));
             stage.show();
@@ -84,9 +92,10 @@ public class FXMLQuanLyChuyenBayController implements Initializable {
             System.out.println("Can't load new windown");
         }
     }
-    
-    @FXML private void handelCapNhatButton() {
-        this.reloadTbvChuyenBay();
+
+    @FXML
+    private void handelCapNhatButton() {
+        this.reloadTable();
     }
 
     private ObservableList<ChuyenBay> getChuyenBay() {
@@ -95,7 +104,8 @@ public class FXMLQuanLyChuyenBayController implements Initializable {
             Session session = HibernateUtil.getSessionFactory().openSession();
 
             Criteria cr = session.createCriteria(ChuyenBay.class);
-
+            
+            cr.addOrder(Order.desc("maChuyen"));
             List<ChuyenBay> chuyenBay = cr.list();
             session.close();
             return FXCollections.observableArrayList(chuyenBay);
@@ -108,7 +118,7 @@ public class FXMLQuanLyChuyenBayController implements Initializable {
 
     }
 
-    public void reloadTbvChuyenBay() {
+    public void reloadTable() {
         this.tbvChuyenBay.getItems().clear();
         this.tbvChuyenBay.setItems(this.getChuyenBay());
     }

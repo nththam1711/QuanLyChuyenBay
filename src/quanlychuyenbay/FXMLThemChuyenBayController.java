@@ -18,15 +18,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.TextField;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextFormatter;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.converter.DateTimeStringConverter;
 import org.hibernate.Criteria;
@@ -48,10 +51,8 @@ public class FXMLThemChuyenBayController implements Initializable {
     private ComboBox<MayBay> cbxMaMB;
     @FXML
     private TextField txtSanBayDen;
-
     @FXML
     private TextField txtSanBayDi;
-
     @FXML
     private DatePicker dtpKhoiHanh;
     @FXML
@@ -60,9 +61,14 @@ public class FXMLThemChuyenBayController implements Initializable {
     private TextField txtSoGheBanDau;
     @FXML
     private TextField txtSoGheTrong;
-
     @FXML
-    private FXMLQuanLyChuyenBayController qlcbControler;
+    private Button btnXacNhan;
+
+    private ObservableList<ChuyenBay> data;
+
+    public void setMayBayData(ObservableList<ChuyenBay> data) {
+        this.data = data;
+    }
 
     /**
      * Initializes the controller class.
@@ -80,8 +86,15 @@ public class FXMLThemChuyenBayController implements Initializable {
     }
 
     @FXML
-    private void handleAcceptButton() {
+    private void handleAcceptButton(ActionEvent event) {
         this.addChuyenBay();
+    }
+
+    private void closeStage() {
+
+        Stage stage = (Stage) btnXacNhan.getScene().getWindow();
+        stage.close();
+
     }
 
     private void setTxtDuKienFormat() {
@@ -156,6 +169,8 @@ public class FXMLThemChuyenBayController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setContentText("Thêm chuyến bay thành công.");
                 alert.show();
+                data.add(0, chuyenbay);
+                this.closeStage();
 
             } catch (Exception ex) {
                 if (trans != null) {
@@ -168,14 +183,8 @@ public class FXMLThemChuyenBayController implements Initializable {
 
             } finally {
                 session.close();
-                this.reloadTable();
-
             }
         }
-    }
-
-    private void reloadTable() {
-        qlcbControler.reloadTbvChuyenBay();
     }
 
     private Callback<DatePicker, DateCell> getDayCellFactory() {
