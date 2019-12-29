@@ -53,7 +53,7 @@ public class FXMLDocumentController implements Initializable {
     }
     @FXML private void handleButtonBanVe (ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLBanVe.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLTraCuuVe.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("Vé Chuyến Bay");

@@ -6,6 +6,7 @@
 package quanlychuyenbay;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -27,6 +28,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Order;
 import quanlychuyenbay.pojo.ChuyenBay;
+import quanlychuyenbay.pojo.NhanVien;
 
 /**
  * FXML Controller class
@@ -92,7 +94,7 @@ public class FXMLQuanLyChuyenBayController implements Initializable {
             System.out.println("Can't load new windown");
         }
     }
-
+    
     @FXML
     private void handelCapNhatButton() {
         this.reloadTable();

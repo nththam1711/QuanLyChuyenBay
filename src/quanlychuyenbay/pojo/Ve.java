@@ -12,21 +12,73 @@ import javax.persistence.*;
  * @author thamt
  */
 @Entity
-@Table(name = "ve")
+@Table(name = "Ve")
 public class Ve {
 
     @Id
     private String MaVe;
     
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="MaChuyen")
+    private ChuyenBay chuyenBay;
     
-    private String MaChuyen;
-    private String MaKH;
+    @Column(name="HangVe")
     private String HangVe;
+    
+    @Column(name="LoaiVe")
     private String LoaiVe;
+    
+    @Column(name="Soghe")
     private String SoGhe;
+    
+    @Column(name="Gia")
     private int Gia;
+    
+    @Column(name="ThoiGian")
     private String ThoiGian;
+    
+    @Column(name="TinhTrang")
     private String TinhTrang;
+    
+
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="MaKH")
+    private KhachHang khachHang;
+
+    public KhachHang getKhachHang() {
+        return khachHang;
+    }
+
+    public void setKhachHang(KhachHang khachHang) {
+        this.khachHang = khachHang;
+    }
+
+    public Ve() {
+    }
+
+    public Ve(String MaVe, ChuyenBay chuyenBay, String HangVe, String LoaiVe, String SoGhe, int Gia, String ThoiGian, String TinhTrang, ChuyenBay chuyenbay, KhachHang khachHang) {
+        this.MaVe = MaVe;
+        this.chuyenBay = chuyenBay;
+        this.HangVe = HangVe;
+        this.LoaiVe = LoaiVe;
+        this.SoGhe = SoGhe;
+        this.Gia = Gia;
+        this.ThoiGian = ThoiGian;
+        this.TinhTrang = TinhTrang;
+        this.khachHang = khachHang;
+    }
+    
+
+    public ChuyenBay getChuyenBay() {
+        return chuyenBay;
+    }
+
+    public void setChuyenBay(ChuyenBay chuyenBay) {
+        this.chuyenBay = chuyenBay;
+    }
+
+
 
     /**
      * @return the MaVe
@@ -42,33 +94,6 @@ public class Ve {
         this.MaVe = MaVe;
     }
 
-    /**
-     * @return the MaChuyen
-     */
-    public String getMaChuyen() {
-        return MaChuyen;
-    }
-
-    /**
-     * @param MaChuyen the MaChuyen to set
-     */
-    public void setMaChuyen(String MaChuyen) {
-        this.MaChuyen = MaChuyen;
-    }
-
-    /**
-     * @return the MaKH
-     */
-    public String getMaKH() {
-        return MaKH;
-    }
-
-    /**
-     * @param MaKH the MaKH to set
-     */
-    public void setMaKH(String MaKH) {
-        this.MaKH = MaKH;
-    }
 
     /**
      * @return the HangVe

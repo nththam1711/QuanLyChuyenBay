@@ -5,6 +5,8 @@
  */
 package quanlychuyenbay.pojo;
 
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.*;
 
 /**
@@ -12,7 +14,7 @@ import javax.persistence.*;
  * @author thamt
  */
 @Entity
-@Table(name = "khachhang")
+@Table(name = "KhachHang")
 public class KhachHang {
 
     @Id
@@ -32,6 +34,38 @@ public class KhachHang {
 
     @Column(name = "SoCMT")
     private String SoCMT;
+    
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "khachHang", cascade=CascadeType.ALL)
+//    @JoinColumn(name = "MaKH")
+    private Set<Ve> ve= new HashSet<Ve>();
+
+    public KhachHang() {
+    }
+
+    public KhachHang(String MaKH, String TenKH, String QuocTich, String DiaChi, String SDT, String SoCMT) {
+        this.MaKH = MaKH;
+        this.TenKH = TenKH;
+        this.QuocTich = QuocTich;
+        this.DiaChi = DiaChi;
+        this.SDT = SDT;
+        this.SoCMT = SoCMT;
+    }
+    
+
+    public Set<Ve> getVe() {
+        return ve;
+    }
+
+    public void setVe(Set<Ve> ve) {
+        this.ve = ve;
+    }
+
+
+    
+    
+
+    
+    
 
     /**
      * @return the MaKH
