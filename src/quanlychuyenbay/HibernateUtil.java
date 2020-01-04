@@ -12,24 +12,27 @@ import quanlychuyenbay.pojo.ChuyenBay;
 import quanlychuyenbay.pojo.KhachHang;
 import quanlychuyenbay.pojo.MayBay;
 import quanlychuyenbay.pojo.Ve;
+import quanlychuyenbay.pojo.TaiKhoan;
 
 /**
  *
  * @author thamt
  */
 public class HibernateUtil {
+
     private static SessionFactory factory;
-    
+
     static {
         Configuration configure = new Configuration();
         configure.addAnnotatedClass(ChuyenBay.class);
         configure.addAnnotatedClass(MayBay.class);
         configure.addAnnotatedClass(KhachHang.class);
+        configure.addAnnotatedClass(TaiKhoan.class);
         configure.addAnnotatedClass(Ve.class);
         configure.configure("hibernate.cfg.xml");
         StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configure.getProperties());
         factory = configure.buildSessionFactory(builder.build());
-    } 
+    }
 
     public static SessionFactory getSessionFactory() {
         return factory;
