@@ -87,8 +87,11 @@ public class FXMLDangNhapController implements Initializable {
                 TaiKhoan taikhoan = (TaiKhoan) session.get(TaiKhoan.class, username);
 
                 Logger.getAnonymousLogger().log(Level.SEVERE, taikhoan.toString());
-
-                if (password.equals(taikhoan.getPassword())) {
+                if(taikhoan == null){
+                    alert.setContentText("Tên đăng nhập không đúng.");
+                                    alert.show();
+                }
+                else if (password.equals(taikhoan.getPassword())) {
                     Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
                     Stage stage = new Stage();
                     stage.setScene(new Scene(root));
@@ -102,7 +105,7 @@ public class FXMLDangNhapController implements Initializable {
                     alert.show();
                 }
             } catch (Exception e) {
-                alert.setContentText("Tên đăng nhập không đúng.");
+                alert.setContentText("err" + e.toString());
                 alert.show();
             }
 

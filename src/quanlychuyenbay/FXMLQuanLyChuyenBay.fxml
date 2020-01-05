@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="972.0" stylesheets="@fxmlquanlychuyenbay.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quanlychuyenbay.FXMLQuanLyChuyenBayController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="972.0" stylesheets="@fxmlquanlychuyenbay.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quanlychuyenbay.FXMLQuanLyChuyenBayController">
     <children>
         <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
@@ -37,7 +37,7 @@
             <children>
                 <Button mnemonicParsing="false" onAction="#handleThemButton" prefHeight="39.0" prefWidth="127.0" text="Thêm" />
                 <Button mnemonicParsing="false" onAction="#handelCapNhatButton" prefHeight="39.0" prefWidth="142.0" text="Cập nhật" />
-                <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="140.0" text="Thoát" />
+                <Button fx:id="btnDel" mnemonicParsing="false" onAction="#handleXoa" prefHeight="39.0" prefWidth="140.0" text="Xoa" />
             </children>
         </HBox>
     </children>

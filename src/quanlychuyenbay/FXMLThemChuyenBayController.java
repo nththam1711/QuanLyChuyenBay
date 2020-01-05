@@ -64,6 +64,7 @@ public class FXMLThemChuyenBayController implements Initializable {
     @FXML
     private Button btnXacNhan;
 
+
     private ObservableList<ChuyenBay> data;
 
     public void setMayBayData(ObservableList<ChuyenBay> data) {
@@ -150,40 +151,78 @@ public class FXMLThemChuyenBayController implements Initializable {
         }
 
     }
+    
+    private boolean check(String maCb, String maMb, String sbDi, String sbDen, String ngayKhoiHanh, String duKien, String sgbd, String sgt){
+        if(maCb.trim() != "" && maMb != "" && sbDi.trim() != "" && sbDen.trim()!="" 
+                && ngayKhoiHanh.trim() != "" && duKien.trim() != "" && sgbd.trim() != "" && sgt.trim() != ""){
+            return true;
+        }
+        return false;
+    }
 
     private void addChuyenBay() {
-        if (this.validate() == true) {
+        String maCb = txtMaChuyenBay.getText(),
+               maMb = cbxMaMB.getSelectionModel().getSelectedItem().toString(),
+               sbDi = txtSanBayDi.getText(),
+               sbDen = txtSanBayDen.getText(),
+               dukien =  txtDuKien.getText(),
+               soGheBD = txtSoGheBanDau.getText(),
+               soGheTrong = txtSoGheTrong.getText();
+        String khoihanh = "";
+        try {
+            khoihanh = dtpKhoiHanh.getValue().toString();
+        } catch (NullPointerException ex) {
+            
+        }
+       
+        boolean good = this.check(maCb, maMb, sbDi, sbDen, khoihanh, dukien, soGheBD, soGheTrong);
+        if (good && this.validate()) {
             Session session = HibernateUtil.getSessionFactory().openSession();
-            ChuyenBay chuyenbay;
-            chuyenbay = new ChuyenBay(
-                    txtMaChuyenBay.getText(), cbxMaMB.getSelectionModel().getSelectedItem(),
-                    txtSanBayDi.getText(), txtSanBayDen.getText(), dtpKhoiHanh.getValue().toString(), txtDuKien.getText(),
-                    Integer.parseInt(txtSoGheBanDau.getText()), Integer.parseInt(txtSoGheTrong.getText()));
+            ChuyenBay cb = (ChuyenBay) session.get(ChuyenBay.class, maCb);
+            if (cb == null) {
+                ChuyenBay chuyenbay;
+                chuyenbay = new ChuyenBay(
+                        maCb, cbxMaMB.getSelectionModel().getSelectedItem(),
+                        sbDi, sbDen, khoihanh, dukien,
+                        Integer.parseInt(txtSoGheBanDau.getText()), Integer.parseInt(txtSoGheTrong.getText()));
 
-            Transaction trans = null;
-            try {
-                trans = session.beginTransaction();
-                session.save(chuyenbay);
-                trans.commit();
+                Transaction trans = null;
+                try {
+                    trans = session.beginTransaction();
+                    session.save(chuyenbay);
+                    trans.commit();
 
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setContentText("Thêm chuyến bay thành công.");
-                alert.show();
-                data.add(0, chuyenbay);
-                this.closeStage();
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setContentText("Thêm chuyến bay thành công.");
+                    alert.show();
+                    data.add(0, chuyenbay);
+                    this.closeStage();
 
-            } catch (Exception ex) {
-                if (trans != null) {
-                    trans.rollback();
+                } catch (Exception ex) {
+                    if (trans != null) {
+                        trans.rollback();
+                    }
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setContentText("Thêm thất bại");
+                    alert.show();
+                    Logger.getAnonymousLogger().log(Level.SEVERE, "msg", ex);
+
                 }
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setContentText("Thêm thất bại");
-                alert.show();
-                Logger.getAnonymousLogger().log(Level.SEVERE, "msg", ex);
 
-            } finally {
-                session.close();
             }
+            else{
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setContentText("Chuyen bay da ton tai");
+                    alert.show();
+            }
+            session.close();
+
+        }
+        else{
+              Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setContentText("Khong hop le!!!");
+                    alert.show();
+        
         }
     }
 

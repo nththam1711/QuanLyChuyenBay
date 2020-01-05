@@ -110,7 +110,7 @@ public class FXMLGhiNhanDatVeController implements Initializable {
     
     @FXML private void cbMaChuyenSelected(ActionEvent e){
         if(this.cbMaChuyen.getSelectionModel().getSelectedItem() != null){
-            String ajfa = this.cbMaChuyen.getSelectionModel().getSelectedItem().toString();
+            //String ajfa = this.cbMaChuyen.getSelectionModel().getSelectedItem().toString();
             ChuyenBay cb = this.getChuyenBay(this.cbMaChuyen.getSelectionModel().getSelectedItem().toString());
             if(cb != null){
                 this.txtSanBayDen.setText(cb.getSanBayDen());
@@ -194,17 +194,25 @@ public class FXMLGhiNhanDatVeController implements Initializable {
                     String maVe = list.get(0).getMaVe();
                     Ve ve = (Ve) session.get(Ve.class, maVe);
                     KhachHang kh = (KhachHang) session.get(KhachHang.class, maKH);
-                    ve.setKhachHang(kh);
-                    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
-                    Date date = new Date();  
-                    ve.setThoiGian(formatter.format(date));
-                    ve.setTinhTrang("Het");
-                    Transaction trans = session.beginTransaction();
-                    session.update(ve);
-                    trans.commit();
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setContentText("Dat ve thanh cong!");
-                    alert.show();
+                    if (kh != null) {
+                        ve.setKhachHang(kh);
+                        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                        Date date = new Date();
+                        ve.setThoiGian(formatter.format(date));
+                        ve.setTinhTrang("Het");
+                        Transaction trans = session.beginTransaction();
+                        session.update(ve);
+                        trans.commit();
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setContentText("Dat ve thanh cong!");
+                        alert.show();
+                    }
+                    else{
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setContentText("Ma khach hang khong hop le!!!");
+                        alert.show();
+                    }
+
                 } else {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setContentText("Ve da het");
